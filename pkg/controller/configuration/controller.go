@@ -115,6 +115,10 @@ func (r *Reconciler) Reconcile(id controller.ID) (controller.Result, error) {
 		}
 	}
 
+	if env := "h3c"; env == "h3c" {
+		return controller.Result{}, nil
+	}
+
 	// Creates list of connections that should be added by the E2 node
 	connToAddList := getConnToAddList(mgmtConn, e2tNodesInterfaces)
 	connToRemoveList := getConnToRemoveList(mgmtConn, e2tNodesInterfaces)
